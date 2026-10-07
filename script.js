@@ -3,6 +3,7 @@ const input = document.querySelector("#todo-input");
 const list = document.querySelector("#todo-list");
 const count = document.querySelector("#todo-count");
 const clearCompletedButton = document.querySelector("#clear-completed");
+const clearAllButton = document.querySelector("#clear-all");
 
 const STORAGE_KEY = "my-first-project-todos";
 
@@ -103,6 +104,22 @@ function clearCompleted() {
   renderTodos();
 }
 
+function clearAll() {
+  if (todos.length === 0) {
+    return;
+  }
+
+  const confirmed = window.confirm("确定要清空全部待办事项吗？");
+
+  if (!confirmed) {
+    return;
+  }
+
+  todos = [];
+  saveTodos();
+  renderTodos();
+}
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -118,5 +135,6 @@ form.addEventListener("submit", (event) => {
 });
 
 clearCompletedButton.addEventListener("click", clearCompleted);
+clearAllButton.addEventListener("click", clearAll);
 
 renderTodos();
