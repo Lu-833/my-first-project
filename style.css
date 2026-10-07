@@ -161,15 +161,26 @@ h1 {
   margin: 0;
 }
 
-#clear-completed {
+.footer-actions {
+  display: flex;
+  gap: 12px;
+}
+
+#clear-completed,
+#clear-all {
   border: 0;
   background: transparent;
   color: var(--primary);
   cursor: pointer;
 }
 
-#clear-completed:hover {
+#clear-completed:hover,
+#clear-all:hover {
   text-decoration: underline;
+}
+
+#clear-all {
+  color: var(--danger);
 }
 
 .sr-only {
