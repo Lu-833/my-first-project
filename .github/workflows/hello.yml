@@ -3,6 +3,8 @@ name: Hello Actions
 on:
   push:
     branches: ["main"]
+  pull_request:
+    branches: ["main"]
   workflow_dispatch:
 
 jobs:
@@ -24,3 +26,6 @@ jobs:
 
       - name: Check index.html
         run: test -f index.html
+
+      - name: Check JavaScript syntax
+        run: node --check script.js
