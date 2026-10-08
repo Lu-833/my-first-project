@@ -14,10 +14,10 @@ jobs:
         run: echo "Hello from GitHub Actions"
 
       - name: Show repository
-        run: echo "Repository: ${{ github.repository }}"
+        run: 'echo "Repository: ${{ github.repository }}"'
 
       - name: Show commit
-        run: echo "Commit: ${{ github.sha }}"
+        run: 'echo "Commit: ${{ github.sha }}"'
 
       - name: Check index.html
         run: test -f index.html
